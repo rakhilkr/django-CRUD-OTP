@@ -1,0 +1,64 @@
+{% csrf_token %}
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+<style>
+.button {
+         background-color: #4CAF50;
+         border: none;
+         color: white;
+         padding: 14px 20px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 15px;
+         margin: 8px 0px;
+         cursor: pointer;
+         }
+    form {
+  border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.container {
+  padding: 16px;
+}
+</style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+
+<h3> {{ logmsg }}</h3>
+
+<form method="post">
+    {% csrf_token %}
+<div class="container">
+    <label for="uname"><b style="color: darkgoldenrod;">Username</b></label>
+    <input placeholder="Enter Username" name="uname" required="" type="text">
+
+    <label for="psw"><b style="color: darkgoldenrod;">Password</b></label>
+    <input placeholder="Enter Password" name="psw" required="" type="password">
+<div>
+    <input value="Login" style="background-color: #4CAF50;color: white;padding: 14px 20px;margin: 8px 0;border: none;cursor: pointer;" type="submit">
+     </div>
+
+    <div>
+         <a href="signup" class="button">Sign Up</a>
+    </div>
+
+
+</div>
+</div>
+</form>
+
+</body>
+</html>

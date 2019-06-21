@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    <style>
+        table,th,td
+        {
+            border:1px solid black;
+            border-collapse: collapse;
+         }
+
+         th,td
+         {
+            padding:15px;
+         }
+
+         th
+         {
+            text-align:  left;
+         }
+
+         table
+         {
+            border-spacing: 5px;
+          }
+
+    </style>
+</head>
+<body>
+<table style="width:100%" >
+    <tr>
+        <th>User</th>
+        <th>Password</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>DELETION</th>
+        <th>UPDATION</th>
+    </tr>
+{% for i in list %}
+    <tr>
+        <td>{{ i.User }}</td>
+        <td>***************</td>
+        <td> {{ i.Name }}</td>
+        <td>{{ i.Email }} </td>
+        <td><a href="{% url 'delete' i.id %}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+        <td><a href="{% url 'edit' i.id %}"><button type="button" class="btn btn-danger">Update</button></a></td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<br>
+
+<a href="{% url 'index' %}"><button type="button" class="btn btn-danger" >Back</button></a>
+
+</body>
+</html>
