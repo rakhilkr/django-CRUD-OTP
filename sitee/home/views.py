@@ -49,8 +49,8 @@ def signup(request):
             otp = random.randint(00000, 99999)
             request.session['otpp'] = otp
             print(otp)
-            account = 'AC0c71b812cffac40e2c1373f4857d2aac'
-            token = '673298a5d22de1cf2477b8d92c3f68ab'
+            account = '**************************'
+            token = '****************************'
             client = Client(account, token)
             client.messages.create(from_='(251) 220-3115', to="+91" + str(a), body='Good day Your verifcation code is ' + str(otp))
             return redirect(otpveri)
